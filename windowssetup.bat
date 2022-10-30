@@ -14,5 +14,9 @@ set /p vd=Viewdistance (max 16):
 fart.exe docker-compose.yml cmdargram %ramuse%G -q
 fart.exe docker-compose.yml cmdargvd %vd% -q
 fart.exe docker-compose.yml cmdargnodename %node-name% -q
+powershell -Command "Invoke-WebRequest https://nextcloud.insert.tk/s/cCZzbwXb5amrecS/download -OutFile serverfiles.zip
+powershell Expand-Archive serverfiles.zip -DestinationPath data"
+echo you will now be connected to the master server, open a support ticket on discord to add your machine to the server list
+pause
 docker-compose pull
 docker-compose up

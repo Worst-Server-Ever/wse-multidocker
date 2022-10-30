@@ -4,11 +4,12 @@ services:
   tailscale:
     image: ghcr.io/lpasselin/tailscale-docker:latest
     environment:
-      TAILSCALE_AUTH_KEY: ${TAILSCALE_AUTH_KEY:?err}
+      TAILSCALE_AUTH_KEY: tskey-auth-kGA5MJ7CNTRL-YxawYDAU8rUpvYQsXv3CtURUptrdoTjYJ
       TAILSCALE_HOSTNAME: cmdargnodename
       TAILSCALE_STATE_ARG: "/var/lib/tailscale_state/tailscale.state"
     volumes:
       - /var/lib/tailscale_state/
+    restart: unless-stopped
   mc:
     image: itzg/minecraft-server
     environment:
@@ -17,11 +18,13 @@ services:
       TYPE: "CUSTOM"
       FORCE_REDOWNLOAD: "true"
       CUSTOM_SERVER: "https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar"
-      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=127.0.0.1:35353'
+      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=127.0.0.1:35353'
     ports:
       - "25565:25565"
     volumes:
-      - data:/data
+      - type: bind
+        source: ./data/wse-serversetup
+        target: /data
     stdin_open: true
     tty: true
     network_mode: "service:tailscale"
