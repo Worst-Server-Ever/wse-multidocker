@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    environment:
+      EULA: "true"
+      MEMORY: "cmdargram"
+      TYPE: "PAPER"
+      FORCE_REDOWNLOAD: true
+      PAPER_DOWNLOAD_UR: "https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar"
+      EXTRA_ARGS: '--DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=127.0.0.1:35353'
+    ports:
+      - "25565:25565"
+    volumes:
+      - data:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+volumes:
+  data: {}
