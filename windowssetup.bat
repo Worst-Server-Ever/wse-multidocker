@@ -13,4 +13,6 @@ set /p ramuse=ram to use in GB:
 set /p vd=Viewdistance (max 16):
 fart.exe docker-compose.yml cmdargram %ramuse%G -q
 fart.exe docker-compose.yml cmdargvd %vd% -q
-
+fart.exe docker-compose.yml cmdargnodename %node-name% -q
+docker-compose pull
+docker-compose up
