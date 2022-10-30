@@ -19,8 +19,6 @@ services:
       FORCE_REDOWNLOAD: "true"
       CUSTOM_SERVER: "multipaper.jar"
       JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=127.0.0.1:35353'
-    ports:
-      - "25565:25565"
     volumes:
       - type: bind
         source: ./data/wse-serversetup
