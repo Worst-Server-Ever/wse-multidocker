@@ -17,7 +17,7 @@ services:
       MEMORY: "cmdargram"
       TYPE: "CUSTOM"
       FORCE_REDOWNLOAD: "true"
-      CUSTOM_SERVER: "https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar"
+      CUSTOM_SERVER: "multipaper.jar"
       JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=127.0.0.1:35353'
     ports:
       - "25565:25565"
