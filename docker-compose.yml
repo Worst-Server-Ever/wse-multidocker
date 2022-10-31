@@ -4,7 +4,7 @@ services:
   tailscale:
     image: ghcr.io/lpasselin/tailscale-docker:latest
     environment:
-      TAILSCALE_AUTH_KEY: tskey-auth-kGA5MJ7CNTRL-YxawYDAU8rUpvYQsXv3CtURUptrdoTjYJ
+      TAILSCALE_AUTH_KEY: tskey-auth-kCuaX26CNTRL-xCnnx2f8rBVQthUddukd9VgnxMYfwwnE
       TAILSCALE_HOSTNAME: cmdargnodename
       TAILSCALE_STATE_ARG: "/var/lib/tailscale_state/tailscale.state"
     volumes:
@@ -18,7 +18,7 @@ services:
       TYPE: "CUSTOM"
       FORCE_REDOWNLOAD: "true"
       CUSTOM_SERVER: "multipaper.jar"
-      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=100.107.16.59:35353'
+      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=100.67.95.52:35353'
     volumes:
       - type: bind
         source: ./data/wse-serversetup
