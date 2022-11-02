@@ -9,7 +9,7 @@ services:
       TYPE: "CUSTOM"
       FORCE_REDOWNLOAD: "true"
       CUSTOM_SERVER: "multipaper.jar"
-      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dserver.address=0.0.0.0 -Dproperties.online-mode=false -Dpaper.settings.perform-username-validation=false -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=54.39.28.6:35353'
+      JVM_OPTS: '-DbungeecordName=cmdargnodename -Dproperties.view-distance=cmdargvd -Dserver.address=0.0.0.0 -Dproperties.online-mode=false -Dpaper.settings.perform-username-validation=false -Dspigot.settings.bungeecord=true -Dpaper.settings.proxy-protocol=true -DmultipaperMasterAddress=54.39.28.6:35353'
     volumes:
       - type: bind
         source: ./data/wse-serversetup
